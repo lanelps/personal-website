@@ -1,0 +1,152 @@
+:root {
+  --main-bg-color: #fff;
+  --main-color: #000;
+  --blue-color: #0066ff;
+  --red-color: #ff5f5f;
+  --turq-color: #00a9d0;
+  --bronze-color: #ba670d;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "IBM Plex Sans", monospace;
+  font-size: 62.5%;
+  z-index: 0;
+  overflow-x: hidden;
+  overflow: visible;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+  font-size: 1.2rem;
+  padding: 4rem;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: color 0.7s ease;
+}
+
+a:hover {
+  color: var(--blue-color);
+  border-bottom: 1px solid var(--blue-color);
+  transition: color 0s;
+}
+
+.hidden {
+  display: none;
+}
+
+.content {
+  border: 1px solid var(--main-color);
+  transition: border 0.7s;
+  max-width: 100vw;
+  max-height: calc(100vh - 8rem);
+  padding: 4rem;
+}
+
+.title {
+  position: relative;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.title::before {
+  position: absolute;
+  left: -1rem;
+  color: var(--blue-color);
+  font-weight: 400;
+  content: "$";
+}
+
+.bronze {
+  position: relative;
+  font-weight: 400;
+}
+
+.bronze a:hover {
+  color: var(--bronze-color);
+  border-bottom: 1px solid var(--bronze-color);
+}
+
+.bronze::before {
+  position: absolute;
+  left: -1rem;
+  color: var(--bronze-color);
+  font-weight: 400;
+  font-size: 1.2rem;
+  content: "•";
+}
+
+.text {
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+
+.git {
+  position: absolute;
+  top: 1.5rem;
+  left: 4rem;
+}
+
+.git span:nth-child(1) {
+  color: var(--red-color);
+}
+
+.git span:nth-child(2) {
+  color: var(--turq-color);
+  cursor: pointer;
+}
+
+.git span:nth-child(3) {
+  color: var(--blue-color);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--main-color);
+  grid-row: 1 / span 3;
+}
+
+main video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  position: relative;
+}
+
+footer > div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.m-contact,
+.m-social,
+.m-resources {
+  display: none;
+}
+
+.copywrite {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 4rem;
+}
