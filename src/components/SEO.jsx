@@ -37,7 +37,7 @@ export default function SEO() {
         {
           name: "keywords",
           content:
-            "Building Supply Group, New Zealand, Membranes, Tapes, Insulation"
+            "Freelance, Graphic Design, Web Development, Auckland, New Zealand"
         },
         { name: "phone", content: phone },
         { name: "email", content: email },
