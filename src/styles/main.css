@@ -113,14 +113,15 @@ a:hover {
   color: var(--blue-color);
 }
 
-main {
+.vid {
   width: 100%;
   height: 100%;
   border: 1px solid var(--main-color);
+  transition: border 0.7s ease;
   grid-row: 1 / span 3;
 }
 
-main video {
+.vid video {
   position: relative;
   width: 100%;
   height: 100%;
@@ -139,9 +140,7 @@ footer > div {
   justify-content: space-between;
 }
 
-.m-contact,
-.m-social,
-.m-resources {
+.mobile {
   display: none;
 }
 

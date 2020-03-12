@@ -5,10 +5,13 @@ import Footer from "../components/Footer"
 import Header from "../components/Header"
 import Card from "../components/Card"
 import Video from "../components/Video"
+import Mobile from "../components/Mobile"
+import SEO from "../components/SEO"
 
 export default () => {
   return (
     <>
+      <SEO />
       <Git />
       <div className='content sm--grid--auto m--grid--auto grid--auto'>
         <Header />
@@ -27,9 +30,7 @@ export default () => {
           gridRow={[4, 5]}
         />
 
-        <main className='grid--col--7-13'>
-          <Video />
-        </main>
+        <Video />
 
         <Card
           title='Contact'
@@ -80,6 +81,52 @@ export default () => {
           }}
           gridCol={[7, 10]}
           gridRow={[6, 7]}
+        />
+
+        <Mobile
+          title='Contact'
+          links={{
+            contact: {
+              email: "lanelps@gmail.com",
+              mobile: "+64-22-6954688"
+            }
+          }}
+          gridCol={[1, 4]}
+        />
+        <Mobile
+          title='Social'
+          links={{
+            social: {
+              instagram: {
+                link: "https://www.instagram.com/lane_lps/",
+                handle: "@lane_lps"
+              },
+              github: {
+                link: "https://github.com/lanelps",
+                handle: "github.com / lanelps"
+              },
+              arena: {
+                link: "https://www.are.na/lane-le-prevost-smith",
+                handle: "are.na/lane-le-prevost-smith"
+              }
+            }
+          }}
+          gridCol={[1, 4]}
+        />
+        <Mobile
+          title='Resources'
+          links={{
+            resources: {
+              cv: {
+                handle: "CV"
+              },
+              webExperiments: {
+                link: "https://lanelps.github.io/web_elements/",
+                handle: "Web Experiments"
+              }
+            }
+          }}
+          gridCol={[1, 4]}
         />
       </div>
 
