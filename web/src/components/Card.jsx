@@ -1,11 +1,20 @@
 import React from "react"
 
-import cv from "../../assets/img/Lane_Le_Prevost_Smith_CV_19.pdf"
+import cv from "../assets/img/Lane_Le_Prevost_Smith_CV_19.pdf"
 
-export default function Mobile({ title, gridCol, links }) {
+export default function Card({ title, links, gridCol, gridRow }) {
   const linkTypes = Object.keys(links)
   const linkTypeSwitch = type => {
     switch (type) {
+      case "bestAwards":
+        return (
+          <div className={links[type].color}>
+            <a href={links[type].link} target='blank' rel='noopener noreferrer'>
+              {links[type].text}
+            </a>
+          </div>
+        )
+
       case "contact":
         return (
           <>
@@ -88,9 +97,9 @@ export default function Mobile({ title, gridCol, links }) {
   }
   return (
     <div
-      className={`${title.toLowerCase()} m--grid--col--${gridCol[0]}-${
+      className={`${title.toLowerCase()} grid--col--${gridCol[0]}-${
         gridCol[1]
-      } mobile`}>
+      } grid--row--${gridRow[0]}-${gridRow[1]} card`}>
       <div className='title'>{title}</div>
       {linkTypeSwitch(linkTypes[0])}
     </div>
