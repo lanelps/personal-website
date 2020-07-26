@@ -1,60 +1,29 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from 'react'
+
+import DarkModeContext from '../context/DarkModeContext'
 
 export default function Git() {
-  const [master, setMaster] = useState({ text: " (master) ", isDark: false })
-  const [time] = useState(new Date().getHours())
+  const { isDark, setIsDark } = useContext(DarkModeContext)
 
-  const dayNightClick = () => {
-    if (master.isDark) {
-      setMaster({ text: " (master) ", isDark: false })
-      document.documentElement.style.setProperty("--main-bg-color", "#fff")
-      document.documentElement.style.setProperty("--main-color", "#000")
-    } else {
-      setMaster({ text: " (master-dark) ", isDark: true })
-      document.documentElement.style.setProperty("--main-bg-color", "#000")
-      document.documentElement.style.setProperty("--main-color", "#fff")
-    }
-  }
-
-  const dayNightKey = e => {
-    switch (e.keyCode) {
-      case 68:
-        if (master.isDark) {
-          setMaster({ text: " (master) ", isDark: false })
-          document.documentElement.style.setProperty("--main-bg-color", "#fff")
-          document.documentElement.style.setProperty("--main-color", "#000")
-        } else {
-          setMaster({ text: " (master-dark) ", isDark: true })
-          document.documentElement.style.setProperty("--main-bg-color", "#000")
-          document.documentElement.style.setProperty("--main-color", "#fff")
-        }
-        break
-      default:
-        setMaster({ ...master })
-    }
-  }
+  const [branch, setBranch] = useState('(master)')
 
   useEffect(() => {
-    if (time > 6 && time <= 18) {
-      setMaster({ text: " (master) ", isDark: false })
-      document.documentElement.style.setProperty("--main-bg-color", "#fff")
-      document.documentElement.style.setProperty("--main-color", "#000")
+    if (isDark) {
+      setBranch('(master-dark)')
     } else {
-      setMaster({ text: " (master-dark) ", isDark: true })
-      document.documentElement.style.setProperty("--main-bg-color", "#000")
-      document.documentElement.style.setProperty("--main-color", "#fff")
+      setBranch('(master)')
     }
-  }, [time])
+  }, [isDark])
+
+  const dayNightClick = () => {
+    setIsDark(!isDark)
+  }
 
   return (
     <div className='git'>
       <span>lanelps</span>
-      <span
-        onClick={dayNightClick}
-        onKeyDown={dayNightKey}
-        role='button'
-        tabIndex={0}>
-        {master.text}
+      <span onClick={dayNightClick} role='button' tabIndex={0}>
+        {branch}
       </span>
       <span>website</span>
     </div>
