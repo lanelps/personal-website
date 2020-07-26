@@ -8,10 +8,7 @@
   --purple-color: #cbcbff;
 }
 
-@font-face {
-  font-family: "IBM Plex Sans Var";
-  src: url("../assets/fonts/IBMPlexSansVar-Roman.woff2") format("woff2");
-}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
 
 :selection {
   background: var(--purple-color);
@@ -27,9 +24,9 @@
 }
 
 html {
-  font-family: "IBM Plex Sans Var", "IBM Plex Sans", monospace;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 62.5%;
-  font-variation-settings: "wght" 400;
+  font-weight: 400;
   z-index: 0;
   overflow-x: hidden;
   overflow: visible;
@@ -44,15 +41,17 @@ body {
 
 h1 {
   font-size: 3rem;
-  font-variation-settings: "wght" 500;
+  font-weight: 500;
 }
 
 h2 {
   font-size: 2.4rem;
+  font-weight: 400;
 }
 
 h3 {
   font-size: 2rem;
+  font-weight: 400;
 }
 
 a {
@@ -67,7 +66,7 @@ a:hover {
   transition: color 0s;
 }
 
-.site {
+.page {
   background-color: var(--main-bg-color);
   padding: 4rem;
   color: var(--main-color);
@@ -93,7 +92,7 @@ a:hover {
 .title {
   position: relative;
   font-size: 1.2rem;
-  font-variation-settings: "wght" 400;
+  font-variation-settings: 'wght' 400;
 }
 
 .title::before {
@@ -101,7 +100,7 @@ a:hover {
   font-size: 1.2rem;
   left: -1rem;
   color: var(--blue-color);
-  content: "$";
+  content: '$';
 }
 
 .bronze {
@@ -118,7 +117,7 @@ a:hover {
   left: -1rem;
   color: var(--bronze-color);
   font-size: 1.2rem;
-  content: "•";
+  content: '•';
 }
 
 .text {
@@ -198,9 +197,9 @@ footer .info > div:not(:last-child) {
 }
 
 footer .info > div:nth-child(1) .title::before {
-  content: "$";
+  content: '$';
 }
 
 footer .info > div .title::before {
-  content: "";
+  content: '';
 }
