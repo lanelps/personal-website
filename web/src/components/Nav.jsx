@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 
 export default function Nav() {
   return (
@@ -9,7 +9,7 @@ export default function Nav() {
       </span>
 
       <span>
-        <Link to='/'>About</Link>
+        <Link to='/about'>About</Link>
       </span>
 
       <span>
@@ -17,15 +17,15 @@ export default function Nav() {
       </span>
 
       <span>
-        <Link to='/'>Contact</Link>
+        <Link to='/contact'>Contact</Link>
       </span>
 
       <span>
-        <Link to='/'>Experiments</Link>
+        <Link to='/experiments'>Experiments</Link>
       </span>
 
       <span>
-        <Link to='/'>Services</Link>
+        <Link to='/services'>Services</Link>
       </span>
     </nav>
   )
