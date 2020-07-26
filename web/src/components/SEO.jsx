@@ -1,12 +1,19 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-export default function SEO() {
+export default function SEO({ title, url }) {
   const {
     site: {
-      siteMetadata: { title, description, author, siteUrl, phone, email }
-    }
+      siteMetadata: {
+        title: siteTitle,
+        description,
+        author,
+        siteUrl,
+        phone,
+        email,
+      },
+    },
   } = useStaticQuery(graphql`
     query {
       site {
@@ -24,27 +31,27 @@ export default function SEO() {
   return (
     <Helmet
       htmlAttributes={{
-        lang: "en"
+        lang: 'en',
       }}
-      title={title}
+      title={`${title} | ${siteTitle} `}
       meta={[
         {
-          name: "google-site-verification",
-          content: ""
+          name: 'google-site-verification',
+          content: '',
         },
-        { name: "description", content: description },
-        { name: "author", content: author },
+        { name: 'description', content: description },
+        { name: 'author', content: author },
         {
-          name: "keywords",
+          name: 'keywords',
           content:
-            "Freelance, Graphic Design, Web Development, Auckland, New Zealand"
+            'Freelance, Graphic Design, Web Development, Auckland, New Zealand',
         },
-        { name: "phone", content: phone },
-        { name: "email", content: email },
-        { name: "robots", content: "index, follow" },
-        { name: "googlebot", content: "index, follow" }
+        { name: 'phone', content: phone },
+        { name: 'email', content: email },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'googlebot', content: 'index, follow' },
       ].concat([])}>
-      <link rel='canonical' href={siteUrl} />
+      <link rel='canonical' href={`${siteUrl}${url && url}`} />
     </Helmet>
   )
 }
