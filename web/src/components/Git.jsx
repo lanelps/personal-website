@@ -21,11 +21,11 @@ export default function Git() {
 
   return (
     <div className='git'>
-      <span>lanelps</span>
+      <span>lanelps </span>
       <span onClick={dayNightClick} role='button' tabIndex={0}>
         {branch}
       </span>
-      <span>website</span>
+      <span> website</span>
     </div>
   )
 }
