@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import cv from "../assets/img/Lane_Le_Prevost_Smith_CV_19.pdf"
+import cv from '../assets/img/Lane_Le_Prevost_Smith_CV_19.pdf'
 
 export default function Footer() {
   const date = new Date().getFullYear()
@@ -32,9 +32,9 @@ export default function Footer() {
           </a>
         </div>
         <div>
-          <span className='title'>Are.na: </span>
-          <a href='https://www.are.na/lane-le-prevost-smith' target='_blank'>
-            are.na/lane-le-prevost-smith
+          <span className='title'>Linkedin: </span>
+          <a href='https://www.linkedin.com/in/lane-lps/' target='_blank'>
+            linkedin.com/in/lane-lps/
           </a>
         </div>
         <div>
