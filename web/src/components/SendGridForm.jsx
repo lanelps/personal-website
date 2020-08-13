@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SendGridForm() {
   return (
-    <form method='post' action='mailto:lanelps@gmail.com' enctype='text/plain'>
+    <form method='post' action='mailto:lanelps@gmail.com'>
       <label htmlFor='name'>Name:</label>
       <input type='text' name='name' />
 

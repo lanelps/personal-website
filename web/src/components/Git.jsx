@@ -8,6 +8,7 @@ export default function Git() {
   const [branch, setBranch] = useState('(master)')
 
   useEffect(() => {
+    console.log(isDark)
     if (isDark) {
       setBranch('(master-dark)')
     } else {
