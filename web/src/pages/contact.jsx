@@ -2,6 +2,7 @@ import React from 'react'
 
 import Layout from '../components/Layout.jsx'
 import Header from '../components/Header'
+import SendGridForm from '../components/SendGridForm'
 
 const Contact = () => {
   const { title, text } = {
@@ -12,6 +13,7 @@ const Contact = () => {
   return (
     <Layout title='Contact' url='/contact' page='contact'>
       <Header title={title} text={text} />
+      <SendGridForm />
     </Layout>
   )
 }
